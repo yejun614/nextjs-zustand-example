@@ -1,9 +1,10 @@
 "use client"
 
 import {useScope} from "@/component/scope/scope-atom";
+import {CounterInterface} from "@/lib/counter/counter-viewmodel";
 
 export default function CounterAtom() {
-  const viewModel = useScope((state) => state)
+  const viewModel = useScope<CounterInterface>()
 
   return (
     <div>

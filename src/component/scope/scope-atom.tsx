@@ -19,7 +19,7 @@ export default function ScopeAtom(props: {
   )
 }
 
-export function useScope<T,>(selector: (store: any) => T): T {
+export function useScope<T,>(selector: (store: any) => T = (state) => state): T {
   const context = useContext(ScopeContext)
   if (!context) {
     throw new Error("Missing Store Provider")
